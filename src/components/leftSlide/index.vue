@@ -1,0 +1,149 @@
+<template>
+  <div class="left-side">
+    <div class="left-side-inner">
+      <router-link to="/" class="logo block">
+        <div style="color: white" class="kuaidian-left-title">快点发布</div>
+      </router-link>
+      <el-menu class="menu-box" theme="dark" router :default-active="$route.path">
+        <div v-for="(item, index) in nav_menu_data" :key="index">
+          <el-menu-item
+            class="menu-list"
+            v-if="typeof item.child === 'undefined'"
+            :index="item.path"
+          >
+            <i class="icon fa" :class="item.icon"></i>
+            <span v-text="item.title" class="text"></span>
+          </el-menu-item>
+          <el-submenu :index="item.path" v-else>
+            <template slot="title">
+              <i class="icon fa" :class="item.icon"></i>
+              <span v-text="item.title" class="text"></span>
+            </template>
+            <el-menu-item
+              class="menu-list"
+              v-for="(sub_item, sub_index) in item.child"
+              :index="sub_item.path"
+              :key="sub_index"
+            >
+              <!--<i class="icon fa" :class="sub_item.icon"></i>-->
+              <span v-text="sub_item.title" class="text"></span>
+            </el-menu-item>
+          </el-submenu>
+        </div>
+      </el-menu>
+    </div>
+  </div>
+</template>
+<script type="text/javascript">
+import store from 'store'
+export default {
+  data() {
+    var Role = store.state.user_info.user.Role
+    if (Role == 1) {
+      return {
+        nav_menu_data: [
+          {
+            title: '概览',
+            path: '/home',
+            icon: 'fa-home'
+          },
+          {
+            title: '上线清单',
+            path: '/task',
+            icon: 'fa-table',
+            child: [
+              {
+                title: '全部清单',
+                path: '/task/list'
+              },
+              {
+                title: '我的清单',
+                path: '/task/mylist'
+              },
+              {
+                title: '创建清单',
+                path: '/task/create'
+              }
+            ]
+          },
+          {
+            title: '项目配置',
+            path: '/conf/list',
+            icon: 'el-icon-menu'
+          },
+          {
+            title: '其他操作',
+            path: '/other',
+            icon: 'fa-bar-chart-o',
+            child: [
+              {
+                title: 'agent状态',
+                path: '/p2p/check',
+                icon: 'ace-icon fa fa-desktop'
+              }
+            ]
+          },
+          {
+            title: '用户管理',
+            path: '/user',
+            icon: 'el-icon-setting',
+            child: [
+              {
+                title: '用户列表',
+                path: '/user/list',
+                icon: 'ace-icon fa fa-desktop'
+              }
+            ]
+          }
+        ]
+      }
+    } else {
+      return {
+        nav_menu_data: [
+          {
+            title: '概览',
+            path: '/home',
+            icon: 'fa-home'
+          },
+          {
+            title: '上线清单',
+            path: '/task',
+            icon: 'fa-table',
+            child: [
+              {
+                title: '我的清单',
+                path: '/task/mylist'
+              },
+              {
+                title: '创建清单',
+                path: '/task/create'
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+</script>
+<style lang="scss">
+.kuaidian-left-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #fff;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  height: 48px;
+  line-height: 48px;
+  font-weight: bold;
+  width: 100%;
+}
+.kuaidian-left-title-hidden {
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+</style>
+
