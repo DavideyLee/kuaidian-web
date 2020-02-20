@@ -23,7 +23,7 @@
         <el-table-column prop="title" label="上线标题"></el-table-column>
         <el-table-column prop="updated_at" label="上线时间" width="180"></el-table-column>
         <el-table-column prop="branch" label="分支"></el-table-column>
-        <el-table-column prop="commit_id" label="上线commit号"></el-table-column>
+        <el-table-column prop="commit_id" label="commitID"></el-table-column>
         <el-table-column prop="pms_batch_id" label="发布批次" width="60"></el-table-column>
         <el-table-column prop="pms_uwork_id" label="流程号" width="80"></el-table-column>
         <el-table-column prop="status" label="当前状态" width="100"></el-table-column>

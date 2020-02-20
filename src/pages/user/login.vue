@@ -124,6 +124,10 @@ export default {
     .login-title {
       margin-bottom: 25px;
       text-align: center;
+      font-size: 28px;
+      letter-spacing: 4px;
+      color: rgb(18, 66, 38);
+      font-weight: bold;
     }
 
     .login-item {

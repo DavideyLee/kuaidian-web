@@ -16,6 +16,8 @@ import 'normalize.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import 'font-awesome/scss/font-awesome.scss'
+
+import './styles/index.scss' // global css
 //导入Vue框架
 import Vue from 'vue'
 //导入组件
@@ -44,8 +46,8 @@ Vue.config.productionTip = false
 // Vue.config.devtools = false
 
 new Vue({
-    router,
-    store,
-    ...App
+  router,
+  store,
+  ...App
 }).
 $mount('mainbody')

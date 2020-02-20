@@ -2,7 +2,7 @@
   <div class="left-side">
     <div class="left-side-inner">
       <router-link to="/" class="logo block">
-        <div style="color: white">快点发布</div>
+        <div style="color: white" class="kuaidian-left-title">快点发布</div>
       </router-link>
       <el-menu class="menu-box" theme="dark" router :default-active="$route.path">
         <div v-for="(item, index) in nav_menu_data" :key="index">

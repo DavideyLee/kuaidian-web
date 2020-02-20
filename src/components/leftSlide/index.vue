@@ -126,24 +126,4 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-.kuaidian-left-title {
-  font-size: 22px;
-  letter-spacing: 2px;
-  color: #fff;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  height: 48px;
-  line-height: 48px;
-  font-weight: bold;
-  width: 100%;
-}
-.kuaidian-left-title-hidden {
-  img {
-    width: 32px;
-    height: 32px;
-  }
-}
-</style>
 

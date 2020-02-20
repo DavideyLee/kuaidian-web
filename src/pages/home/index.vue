@@ -294,11 +294,7 @@ export default {
           var chartData = []
           var chartTitleData = []
           var total = 0
-          // data.sort(function (a,b) {
-          //     return a.task_count>b.task_count
-          // });
-          // console.log(data)
-          for (var i = 0; i < data.length; i++) {
+          for (var i in data) {
             total = total + data[i].task_count * 1
             chartData.push({ value: data[i].task_count, name: data[i].name })
             chartTitleData.push(data[i].name)
