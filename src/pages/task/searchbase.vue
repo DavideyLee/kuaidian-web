@@ -20,6 +20,11 @@
         <el-table-column prop="id" label="id" width="80"></el-table-column>
         <el-table-column prop="realname" label="创建人" width="100"></el-table-column>
         <el-table-column prop="name" label="项目"></el-table-column>
+        <el-table-column prop="level" label="环境" width="150">
+          <template scope="props">
+            <span v-text="props.row.level == 3 ? '生产环境' : '验收环境'"></span>
+          </template>
+        </el-table-column>
         <el-table-column prop="title" label="上线标题"></el-table-column>
         <el-table-column prop="updated_at" label="上线时间" width="180"></el-table-column>
         <el-table-column prop="branch" label="分支"></el-table-column>
