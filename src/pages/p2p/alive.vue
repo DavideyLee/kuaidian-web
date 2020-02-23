@@ -18,9 +18,14 @@
         style="width: 100%;"
       >
         <el-table-column prop="id" label="id" width="80" align="center"></el-table-column>
+        <el-table-column prop="title" label="上线标题" width="280" align="center"></el-table-column>
+        <el-table-column prop="name" label="项目" width="140" align="center"></el-table-column>
+        <el-table-column prop="level" label="环境" width="120" align="center">
+          <template scope="props">
+            <span v-text="props.row.level == 3 ? '生产环境' : '验收环境'" align="center"></span>
+          </template>
+        </el-table-column>
         <el-table-column prop="realname" label="创建人" width="100" align="center"></el-table-column>
-        <el-table-column prop="name" label="项目" align="center"></el-table-column>
-        <el-table-column prop="title" label="上线标题" align="center"></el-table-column>
         <el-table-column prop="updated_at" label="上线时间" width="180" align="center"></el-table-column>
         <el-table-column prop="branch" label="分支" align="center"></el-table-column>
         <el-table-column prop="commit_id" label="commitID" align="center"></el-table-column>
@@ -65,7 +70,7 @@
           <el-pagination
             @current-change="handleCurrentChange"
             :current-page="currentPage"
-            :page-size="15"
+            :page-size="length"
             layout="total, prev, pager, next"
             :total="total"
           ></el-pagination>
