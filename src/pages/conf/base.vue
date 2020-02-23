@@ -21,24 +21,24 @@
         border
         style="width: 100%;"
       >
-        <el-table-column prop="id" label="id" width="80"></el-table-column>
-        <el-table-column prop="name" label="项目名称"></el-table-column>
-        <el-table-column prop="realname" label="创建人" width="120"></el-table-column>
-        <el-table-column prop="level" label="环境" width="150">
+        <el-table-column prop="id" label="id" width="80" align="center"></el-table-column>
+        <el-table-column prop="name" label="项目名称" align="center"></el-table-column>
+        <el-table-column prop="realname" label="创建人" width="120" align="center"></el-table-column>
+        <el-table-column prop="level" label="环境" width="150" align="center">
           <template scope="props">
             <span v-text="props.row.level == 3 ? '生产环境' : '验收环境'"></span>
           </template>
         </el-table-column>
-        <el-table-column prop="repo_type" label="发布方式" width="100"></el-table-column>
-        <el-table-column prop="keep_version_num" label="保留版本数量" width="80"></el-table-column>
-        <el-table-column prop="p2p" label="是否使用p2p" width="80">
+        <el-table-column prop="repo_type" label="发布方式" width="100" align="center"></el-table-column>
+        <el-table-column prop="keep_version_num" label="保留版本数量" width="80" align="center"></el-table-column>
+        <el-table-column prop="p2p" label="是否使用p2p" width="80" align="center">
           <template scope="props">
             <span v-text="props.row.p2p == 0 ? '否' : '是'"></span>
           </template>
         </el-table-column>
-        <el-table-column prop="updated_at" label="更新时间" width="200"></el-table-column>
-        <el-table-column prop="created_at" label="创建时间" width="200"></el-table-column>
-        <el-table-column label="操作" width="370">
+        <el-table-column prop="updated_at" label="更新时间" width="200" align="center"></el-table-column>
+        <el-table-column prop="created_at" label="创建时间" width="200" align="center"></el-table-column>
+        <el-table-column label="操作" width="370" align="center">
           <template scope="props">
             <el-popover ref="popover4" placement="left-start" width="620" trigger="click">
               <div style="margin-left:10px;font-size:15px">

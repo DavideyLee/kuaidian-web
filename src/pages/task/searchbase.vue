@@ -18,16 +18,21 @@
         style="width: 100%;"
       >
         <el-table-column prop="id" label="id" width="80"></el-table-column>
-        <el-table-column prop="realname" label="创建人" width="100"></el-table-column>
+        <el-table-column prop="title" label="上线标题" width="200"></el-table-column>
         <el-table-column prop="name" label="项目"></el-table-column>
         <el-table-column prop="level" label="环境" width="150">
           <template scope="props">
             <span v-text="props.row.level == 3 ? '生产环境' : '验收环境'"></span>
           </template>
         </el-table-column>
-        <el-table-column prop="title" label="上线标题"></el-table-column>
+        <el-table-column prop="realname" label="创建人" width="100"></el-table-column>
         <el-table-column prop="updated_at" label="上线时间" width="180"></el-table-column>
-        <el-table-column prop="branch" label="分支"></el-table-column>
+        <el-table-column label="分支" align="center">
+          <template scope="props">
+            <el-tag v-if="props.row.branch===''" type="success">Tag发布</el-tag>
+            <el-tag v-else type="info">{{props.row.branch}}</el-tag>
+          </template>
+        </el-table-column>
         <el-table-column prop="commit_id" label="commitID"></el-table-column>
         <el-table-column prop="pms_batch_id" label="发布批次" width="60"></el-table-column>
         <el-table-column prop="pms_uwork_id" label="流程号" width="80"></el-table-column>

@@ -10,7 +10,7 @@
               </div>
               <div style="float:left;margin-left:10px;" class="infobox-data">
                 <span class="infobox-data-number">
-                  <strong style="color: #8492A6">{{hostsum}}</strong> 台服务器
+                  <strong style="color: #8492A6">{{hostsum}}</strong> 台主机
                 </span>
               </div>
 
@@ -189,6 +189,14 @@ export default {
             chartData.push({ value: data[i].task_count, name: data[i].name })
             chartTitleData.push(data[i].name)
           }
+          var colorList = [
+            '#afa3f5',
+            '#00d488',
+            '#3feed4',
+            '#3bafff',
+            '#f1bb4c',
+            'rgba(250,250,250,0.5)'
+          ]
           this.msg1 = '本日共发布' + total + '单'
           var option = {
             title: {
@@ -208,10 +216,15 @@ export default {
               {
                 name: '发布类别',
                 type: 'pie',
-                radius: '60%',
+                radius: ['40%', '60%'],
                 center: ['50%', '60%'],
                 data: chartData,
                 itemStyle: {
+                  normal: {
+                    color: function(params) {
+                      return colorList[params.dataIndex]
+                    }
+                  },
                   emphasis: {
                     shadowBlur: 10,
                     shadowOffsetX: 0,
@@ -244,6 +257,14 @@ export default {
             chartData.push({ value: data[i].task_count, name: data[i].name })
             chartTitleData.push(data[i].name)
           }
+          var colorList = [
+            '#afa3f5',
+            '#00d488',
+            '#3feed4',
+            '#3bafff',
+            '#f1bb4c',
+            'rgba(250,250,250,0.5)'
+          ]
           this.msg2 = '本周共发布' + total + '单'
           var option = {
             title: {
@@ -263,10 +284,15 @@ export default {
               {
                 name: '发布类别',
                 type: 'pie',
-                radius: '60%',
+                radius: ['40%', '60%'],
                 center: ['50%', '60%'],
                 data: chartData,
                 itemStyle: {
+                  normal: {
+                    color: function(params) {
+                      return colorList[params.dataIndex]
+                    }
+                  },
                   emphasis: {
                     shadowBlur: 10,
                     shadowOffsetX: 0,
@@ -300,6 +326,14 @@ export default {
             chartTitleData.push(data[i].name)
           }
           this.msg3 = '本月共发布' + total + '单'
+          var colorList = [
+            '#afa3f5',
+            '#00d488',
+            '#3feed4',
+            '#3bafff',
+            '#f1bb4c',
+            'rgba(250,250,250,0.5)'
+          ]
           var option = {
             title: {
               text: '本月发布',
@@ -318,13 +352,18 @@ export default {
               {
                 name: '发布类别',
                 type: 'pie',
-                radius: '60%',
+                radius: ['40%', '60%'],
                 center: ['50%', '60%'],
                 data: chartData,
                 itemStyle: {
+                  normal: {
+                    color: function(params) {
+                      return colorList[params.dataIndex]
+                    }
+                  },
                   emphasis: {
                     shadowBlur: 10,
-                    shadowOffsetX: 0,
+                    shadowOffsetX: 5,
                     shadowColor: 'rgba(0, 0, 0, 0.5)'
                   }
                 }
@@ -396,7 +435,17 @@ export default {
               {
                 name: '发布次数',
                 type: 'bar',
-                data: chartData
+                data: chartData,
+                itemStyle: {
+                  normal: {
+                    color: '#00d488'
+                  },
+                  emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 5,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                  }
+                }
               }
             ]
           }

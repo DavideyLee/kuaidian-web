@@ -11,18 +11,18 @@
             <el-input
               v-bind:readonly="isReadonly"
               v-model="form.register_username"
-              placeholder="请输入账户名："
+              placeholder="请输入账户名：liwanwei370"
               class="form-inputa"
               :autofocus="true"
             ></el-input>
           </el-form-item>
 
           <el-form-item prop="register_realname" class="login-itema">
-            <label class="labela">花名.实名 ：</label>
+            <label class="labela">实名 ：</label>
             <el-input
               v-bind:readonly="isLocked"
               v-model="form.register_realname"
-              placeholder="输入规范如：春哥.李宇春"
+              placeholder="输入规范如：李万伟"
               class="form-inputa"
               :autofocus="true"
             ></el-input>
@@ -33,7 +33,7 @@
             <el-input
               v-bind:readonly="isLocked"
               v-model="form.register_email"
-              placeholder="请输入联系邮箱："
+              placeholder="请输入联系邮箱：liwanwei370@xxxxx.com"
               class="form-inputa"
               :autofocus="true"
             ></el-input>
@@ -41,8 +41,8 @@
           <el-form-item label="用户类型:" label-width="100px">
             <el-radio-group v-model="form.Role">
               <el-radio :label="1">管理员</el-radio>
-              <el-radio :label="10">全部预发布用户</el-radio>
-              <el-radio :label="20">单个项目用户</el-radio>
+              <el-radio :label="10">预发用户</el-radio>
+              <el-radio :label="20">项目用户</el-radio>
             </el-radio-group>
           </el-form-item>
           <el-form-item v-if="form.Role==20" label="项目名称:" label-width="100px">

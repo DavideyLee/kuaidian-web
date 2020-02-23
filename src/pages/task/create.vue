@@ -6,10 +6,6 @@
         <el-row>
           <el-col :span="20">
             <el-form label-width="100px">
-              <div class="panel-title">
-                预发布
-                <div class="fr"></div>
-              </div>
               <div class="panel-body">
                 <el-form-item label="项目名称:" label-width="100px">
                   <el-select

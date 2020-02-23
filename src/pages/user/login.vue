@@ -31,7 +31,7 @@
             <el-button size="large" class="form-submit" @click="submit_form">登录</el-button>
           </el-form-item>
           <el-form-item class="login-item">
-            <el-button size="large" class="form-submit" @click="to_tasklist">上线单查询</el-button>
+            <el-button size="large" class="form-submit" @click="to_tasklist">上线查询</el-button>
           </el-form-item>
         </el-form>
       </div>

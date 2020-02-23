@@ -46,12 +46,12 @@
                       <el-tooltip
                         class="item"
                         effect="dark"
-                        content=" git格式:ssh-url，需要把宿主机php进程用户的ssh-key加入git信任"
+                        content="git格式：http(git开启80号端口)；ssh(git开启22号端口)"
                         placement="top"
                       >
                         <el-input
                           v-model="form.RepoUrl"
-                          placeholder="git@gitee.com/dev-ops/gopub.git"
+                          placeholder="http://git.xxxxx.com/opscenter/ark-app.git"
                           style="width: 600px;"
                         ></el-input>
                       </el-tooltip>
@@ -62,7 +62,7 @@
                       <el-tooltip class="item" effect="dark" content="发布包的http地址" placement="top">
                         <el-input
                           v-model="form.RepoUrl"
-                          placeholder="File模式填入下载文件夹路径如：http://download.aaa.org/a/"
+                          placeholder="File模式填入下载文件夹路径如：http://download.xxxxx.org/a/"
                           style="width: 600px;"
                         ></el-input>
                       </el-tooltip>
@@ -73,12 +73,12 @@
                       <el-tooltip
                         class="item"
                         effect="dark"
-                        content="job页jenkins地址，类似http://jenkins.xxxxx.com/job/项目名称/"
+                        content="job页jenkins地址，类似http://jenkins.xxxxx.com/job/ark-app/"
                         placement="top"
                       >
                         <el-input
                           v-model="form.RepoUrl"
-                          placeholder="job页jenkins地址，类似http://jenkins.xxxxx.com/job/项目名称/"
+                          placeholder="job页jenkins地址，类似http://jenkins.xxxxx.com/job/ark-app/"
                           style="width: 600px;"
                         ></el-input>
                       </el-tooltip>
@@ -104,7 +104,7 @@
             <el-row :gutter="12">
               <el-col :span="8">
                 <div class="panel-title">
-                  宿主机
+                  快点机
                   <div class="fr">
                     <slot></slot>
                   </div>
@@ -114,7 +114,7 @@
                     <el-tooltip class="item" effect="dark" content="代码的检出存放路径" placement="top">
                       <el-input
                         v-model="form.DeployFrom"
-                        placeholder="/data/gopub"
+                        placeholder="/data/kuaidian"
                         style="width: 400px;"
                       ></el-input>
                     </el-tooltip>
@@ -151,12 +151,12 @@ README.md"
                       <el-tooltip
                         class="item"
                         effect="dark"
-                        content="代码的部署的用户，一般是运行的服务的用户，如php进程用户www"
+                        content="代码的部署的用户，一般是运行的服务的用户"
                         placement="top"
                       >
                         <el-input
                           v-model="form.ReleaseUser"
-                          placeholder="www"
+                          placeholder="laowang"
                           style="width: 400px;"
                         ></el-input>
                       </el-tooltip>
@@ -165,12 +165,12 @@ README.md"
                       <el-tooltip
                         class="item"
                         effect="dark"
-                        content="代码的最终部署路径，请不要在目标机新建此目录，walle会自动生成此软链，正确设置父目级录即可"
+                        content="代码的最终部署路径，请不要在目标机新建此目录，会自动生成此软链，正确设置父目级录即可"
                         placement="top"
                       >
                         <el-input
                           v-model="form.ReleaseTo"
-                          placeholder="/data/wwwroot/xxx"
+                          placeholder="/opt/ark-app"
                           style="width: 400px;"
                         ></el-input>
                       </el-tooltip>
@@ -179,12 +179,12 @@ README.md"
                       <el-tooltip
                         class="item"
                         effect="dark"
-                        content="代码发布的版本库，每次发布更新webroot的软链到当前最新版本"
+                        content="代码发布的版本库，每次发布更新软链到当前最新版本"
                         placement="top"
                       >
                         <el-input
                           v-model="form.ReleaseLibrary"
-                          placeholder="/data/gopub_releases"
+                          placeholder="/opt/releases"
                           style="width: 400px;"
                         ></el-input>
                       </el-tooltip>
@@ -320,7 +320,7 @@ README.md"
                       <el-tooltip
                         class="item"
                         effect="dark"
-                        content="git代码检出之后，可能做一些调整处理，如vendor拷贝，环境适配（mv config-test.php config.php），一行一条"
+                        content="git代码检出之后，可能做一些调整处理，如vendor拷贝，环境适配（mv config-test.py config.py），一行一条"
                         placement="top"
                       >
                         <el-input

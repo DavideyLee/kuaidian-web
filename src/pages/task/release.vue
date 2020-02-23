@@ -47,7 +47,7 @@
           </el-col>
         </el-row>
       </el-form>
-      <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
+      <el-tabs v-model="activeName" type="border-card">
         <el-tab-pane label="版本区别" name="verLog">
           <el-table
             :data="changes"
@@ -56,9 +56,9 @@
             border
             style="width: 100%;"
           >
-            <el-table-column prop="path" label="文件"></el-table-column>
-            <el-table-column prop="name" label="修改人"></el-table-column>
-            <el-table-column prop="time" label="时间"></el-table-column>
+            <el-table-column prop="path" label="文件" align="center"></el-table-column>
+            <el-table-column prop="name" label="修改人" align="center"></el-table-column>
+            <el-table-column prop="time" label="时间" align="center"></el-table-column>
           </el-table>
         </el-tab-pane>
         <el-tab-pane label="上线进度" name="publishProcess">
@@ -122,13 +122,10 @@ export default {
     levelEnv: function() {
       var env = ''
       switch (this.project.Level) {
-        case '1':
-          env = '测试环境'
-          break
-        case '2':
+        case 2:
           env = '验收环境'
           break
-        case '3':
+        case 3:
           env = '生产环境'
           break
       }

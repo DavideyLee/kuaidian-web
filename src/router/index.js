@@ -88,7 +88,7 @@ const routes = [{
       menuView: require('components/leftSlide')
     },
     meta: {
-      title: "全部上线单",
+      title: "全部上线",
       auth: true
     }
   }, {
@@ -107,7 +107,7 @@ const routes = [{
       menuView: require('components/leftSlide')
     },
     meta: {
-      title: "创建上线单",
+      title: "创建上线",
       auth: true
     }
   }, {
@@ -140,7 +140,7 @@ const routes = [{
       menuView: require('components/leftSlide')
     },
     meta: {
-      title: "我的上线单",
+      title: "我的上线",
       auth: true
     }
   }, {
@@ -151,7 +151,7 @@ const routes = [{
       menuView: require('components/leftSlide')
     },
     meta: {
-      title: "创建上线单",
+      title: "创建上线",
       auth: true
     }
   }, {
@@ -162,7 +162,7 @@ const routes = [{
       menuView: require('components/leftSlide')
     },
     meta: {
-      title: "创建上线单",
+      title: "创建上线",
       auth: true
     }
   }, {
@@ -173,7 +173,7 @@ const routes = [{
       menuView: require('components/leftSlide')
     },
     meta: {
-      title: "创建上线单",
+      title: "创建上线",
       auth: true
     }
   }, {

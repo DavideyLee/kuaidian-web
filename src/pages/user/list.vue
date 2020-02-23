@@ -4,7 +4,7 @@
       <router-link style="float: left; margin-right: 10px" :to="{name: 'register'}" tag="span">
         <el-button type="primary" icon="plus" size="small">添加</el-button>
       </router-link>
-      <el-button type="warning" size="small" @click="sync_ldap()">从ldap同步</el-button>
+      <el-button type="success" size="small" @click="sync_ldap()">从ldap同步</el-button>
       <el-button type="warning" size="small" @click="test_ldap()">测试ldap</el-button>
     </panel-title>
 
@@ -16,23 +16,23 @@
         border
         style="width: 100%;"
       >
-        <el-table-column prop="id" label="id" width="80"></el-table-column>
-        <el-table-column prop="realname" label="名称" width="100"></el-table-column>
-        <el-table-column prop="updated_at" label="上线时间" width="180"></el-table-column>
-        <el-table-column prop="email" label="邮箱"></el-table-column>
-        <el-table-column prop="username" label="用户名"></el-table-column>
-        <el-table-column prop="created_at" label="创建时间" width="180"></el-table-column>
-        <el-table-column prop="role" label="	角色" width="100">
+        <el-table-column prop="id" label="id" width="80" align="center"></el-table-column>
+        <el-table-column prop="realname" label="名称" width="100" align="center"></el-table-column>
+        <el-table-column prop="username" label="用户名" align="center"></el-table-column>
+        <el-table-column prop="email" label="邮箱" align="center"></el-table-column>
+        <el-table-column prop="role" label="	角色" width="100" align="center">
           <template scope="props">
             <span>{{ props.row.role | getRole }}</span>
           </template>
         </el-table-column>
-        <el-table-column prop="ldap" label=" 用户来源" width="100">
+        <el-table-column prop="updated_at" label="上线时间" width="180" align="center"></el-table-column>
+        <el-table-column prop="created_at" label="创建时间" width="180" align="center"></el-table-column>
+        <el-table-column prop="ldap" label=" 用户来源" width="100" align="center">
           <template scope="props">
             <span>{{ props.row.from_ldap | isLdap }}</span>
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="300">
+        <el-table-column label="操作" width="300" align="center">
           <template scope="props">
             <router-link :to="{name: 'register', query:  {id: props.row.id}}" tag="span">
               <el-button size="small" icon="edit">修改</el-button>
@@ -67,9 +67,9 @@ export default {
       if (value == 1) {
         return '管理员'
       } else if (value == 10) {
-        return '全部预发布用户'
+        return '预发用户'
       } else if (value == 20) {
-        return '单个项目用户'
+        return '项目用户'
       }
       return value
     },
