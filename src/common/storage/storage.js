@@ -1,17 +1,12 @@
-/**
- * @file: index.
- * @intro: Storage工具类.
- * @author: zzmhot.
- * @email: zzmhot@163.com.
- * @Date: 2017/4/27 15:28.
- * @Copyright(©) 2017 by zzmhot.
- *
- */
-
 //存储前缀
-import {storage_prefix} from 'common/config'
+import {
+  storage_prefix
+} from 'common/config'
 
-import {tools_verify, tools_uri} from 'common/tools'
+import {
+  tools_verify,
+  tools_uri
+} from 'common/tools'
 
 class Storage {
 

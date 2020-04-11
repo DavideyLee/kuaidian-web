@@ -1,16 +1,5 @@
-/**
- * @file: tools_verify.
- * @intro: 常用验证工具类.
- * @author: zzmhot.
- * @email: zzmhot@163.com.
- * @Date: 2017/5/9 13:45.
- * @Copyright(©) 2017 by zzmhot.
- *
- */
-
 export default new class Verify {
-  constructor() {
-  }
+  constructor() {}
 
   //验证url是否正确，true/false
   isUrl(url) {

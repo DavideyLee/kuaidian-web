@@ -1,15 +1,7 @@
-/**
- * @file: tools_base64.
- * @intro: base64加密解密工具.
- * @author: zzmhot.
- * @email: zzmhot@163.com.
- * @Date: 2017/5/9 13:45.
- * @Copyright(©) 2017 by zzmhot.
- *
- */
-
 //存储前缀
-import {base64_prefix} from 'common/config'
+import {
+  base64_prefix
+} from 'common/config'
 
 import base64 from 'js-base64'
 

@@ -1,17 +1,12 @@
-/**
- * @file: cookie.
- * @intro: cookie存储类.
- * @author: zzmhot.
- * @email: zzmhot@163.com.
- * @Date: 2017/4/28 10:45.
- * @Copyright(©) 2017 by zzmhot.
- *
- */
-
 //存储前缀
-import {storage_prefix} from 'common/config'
+import {
+  storage_prefix
+} from 'common/config'
 
-import {tools_verify, tools_uri} from 'common/tools'
+import {
+  tools_verify,
+  tools_uri
+} from 'common/tools'
 
 /**
  * cookies操作类
@@ -60,10 +55,12 @@ export default new class Cookie {
    * @returns {Cookie}
    */
   set(key, value, options) {
-    options = tools_verify.isObject(options) ? options : {expires: options}
+    options = tools_verify.isObject(options) ? options : {
+      expires: options
+    }
     // 如果expires为空的话那么就设置为session.
     let expires = options.expires !== undefined ? options.expires : (this.defaults.expires || ''),
-      expiresType = typeof(expires)
+      expiresType = typeof (expires)
     if (expiresType === 'string' && expires !== '') {
       expires = new Date(expires)
     } else if (expiresType === 'number') {

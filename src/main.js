@@ -1,16 +1,3 @@
-/**
- * Created by zzmhot on 2017/3/23.
- *
- * 主程序入口
- *
- * @author: zzmhot
- * @github: https://github.com/zzmhot
- * @email: zzmhot@163.com
- * @Date: 2017/3/23 18:19
- * @Copyright(©) 2017 by zzmhot.
- *
- */
-
 //导入样式
 import 'normalize.css'
 import ElementUI from 'element-ui'
